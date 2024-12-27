@@ -179,4 +179,5 @@ span {
     background: linear-gradient(rgba(0, 0, 0, 0.1), var(--main-color));
     display: flex;
     justify-content: center;
+    
 }
