@@ -209,3 +209,37 @@ span {
     font-size:2rem;
     color:var(--snd-bg-color);
 }
+
+/* STYLE OF CONTACT SECTION  */
+.contact h2{
+    margin-bottom:3rem;
+}
+.contact form {
+    max-width:70rem;
+    margin:1rem auto;
+    text-align:center;
+    margin-bottom:3rem;
+}
+.contact form .input-box{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.contact form .input-box input,
+.contact form textarea {
+    width: 100%;
+    padding:1.5rem;
+    color:var(--text-color);
+    border-radius: .8rem;
+    margin:.7rem 0;
+}
+.contact form .input-box input {
+    width:40%;
+}
+.contact form textarea{
+    resize:none;
+}
+.contact form .btn{
+    margin-top:2rem;
+    cursor: pointer;
+}
