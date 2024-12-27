@@ -39,6 +39,7 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
+    width:100%;
     z-index:100;
 }
 .logo {
@@ -46,6 +47,13 @@ header {
     color:var(--text-color);
     font-weight: 700;
     cursor:default;
+}
+.navbar {
+    display: flex;
+    justify-content: end;
+    /* justify-content: space-between;  */
+    align-items: center;
+    width: 100%;
 }
 .navbar a {
     font-size: 1.5rem;
@@ -149,6 +157,7 @@ span {
 }
 .portfolio h2 {
     margin-bottom: 4rem;
+    font-size: 3rem; /* Increased font size */
 }
 .portfolio-container {
     display: grid;
@@ -202,6 +211,7 @@ span {
     align-items: center;
     width:5rem;
     height:5rem;
+    padding:.5rem;
     background:var(--text-color);
     border-radius:50%;
 }
@@ -213,6 +223,7 @@ span {
 /* STYLE OF CONTACT SECTION  */
 .contact h2{
     margin-bottom:3rem;
+    font-size: 3rem; 
 }
 .contact form {
     max-width:70rem;
@@ -224,14 +235,16 @@ span {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    
 }
 .contact form .input-box input,
 .contact form textarea {
     width: 100%;
     padding:1.5rem;
-    color:var(--text-color);
+    /* color:var(--bg-color); */
     border-radius: .8rem;
     margin:.7rem 0;
+    background: var(--main-color);
 }
 .contact form .input-box input {
     width:40%;
@@ -242,4 +255,31 @@ span {
 .contact form .btn{
     margin-top:2rem;
     cursor: pointer;
+}
+
+.footer{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 1.5rem 0;
+    background: var(--snd-bg-color);
+}
+.footer-text{
+    font-size:1.5rem;
+}
+.footer-iconTop{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: .8rem 1rem;
+    background: var(--main-color);
+    border-radius: .8rem;
+    transition:.5s ease;
+}
+.footer-iconTop a:hover{
+    box-shadow:0 0 1rem var(--main-color);
+}
+.footer-iconTop a i {
+    font-size:1.5rem;
+    color:var(--snd-bg-color);
 }
