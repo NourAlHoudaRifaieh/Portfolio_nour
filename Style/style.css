@@ -18,11 +18,13 @@
 html {
     font-size: 62.5%;
     overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
 body {
     background-color: var(--bg-color);
     color: var(--text-color);
+    font-family: 'Nunito', sans-serif;
 }
 section {
     min-height:100vh;
@@ -195,7 +197,7 @@ span {
     transform:translateY(0);
 }
 .portfolio-layer h4{
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
 .portfolio-layer p{
     font-size:1.2rem;
@@ -216,9 +218,9 @@ span {
     color:var(--snd-bg-color);
 } */
 /* STYLE OF CONTACT SECTION  */
-.contact h2{
+.contact h2 {
     margin-bottom:3rem;
-    font-size: 3rem; 
+    font-size: 3rem !important;
 }
 .contact form {
     max-width:70rem;
@@ -244,7 +246,6 @@ span {
 }
 .contact form .input-box input {
     width:48%;
-    /* background: var(--snd-bg-color); */
 }
 .contact form textarea{
     resize:none;
@@ -300,8 +301,9 @@ span {
     transition:  0.3s;
 }
 
-.filter-btn:hover {
-    background: var(--snd-bg-color);
+.filter-btn:hover , 
+.filter-btn:focus {
+    background: var(--bg-color);
 }
 
 /* .portfolio-container {
@@ -329,4 +331,90 @@ span {
 .portfolio-box.active {
     display: block; 
 }
- 
+
+
+ /* css for popup modal  */
+ /* Modal Styles */
+
+ /* Modal Styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9); /* Darker background overlay */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: #262b40; /* Dark background for the modal */
+    color: #ffffff; /* White text for contrast */
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
+}
+
+.modal-content h3 {
+    margin-bottom: 1rem;
+    font-size: 2.5rem;
+    color: #59b2f4; /* Accent color for the title */
+}
+
+.modal-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+}
+.modal-content p {
+    font-size: 1.4rem;
+}
+
+.modal-content ul li {
+    margin: 0.5rem 0;
+    font-size: 1.3rem;
+    color: #dcdcdc; /* Light gray for text contrast */
+}
+
+.close {
+    position: relative;
+    top: 0px;
+    left:50%; 
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    color: #ffffff;
+    background: #59b2f4;
+    border-radius: 50%;
+    padding: 0.2rem 0.7rem;
+    z-index: 1100; /* Ensure it is on top of the modal content */
+    transition: transform 0.3s ease;
+}
+
+.close:hover {
+    transform: scale(1.2); /* Slight zoom effect */
+    background: #f44336; /* Red for hover */
+}
+
+
+/* Animation for Modal */
+.modal-content {
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}

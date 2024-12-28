@@ -7,6 +7,8 @@
     <!-- FONT AWESOME  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="Style/style.css">
+    <!-- BOOTSTRAP CSS  -->
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"> -->
     <title>Responsive Portfolio Website With Interactive Features</title>
 </head>
 <body>
@@ -42,44 +44,122 @@
     </section>
     
     <!-- PORTFOLIO SECTION DESIGN  -->
-     <!-- <section class="portfolio" id="portfolio">
+    <section class="portfolio" id="portfolio">
         <h2 class="heading">Latest <span>Projects</span></h2>
-        <div class="portfolio-container">
-            <div class="portfolio-box">
-                <img src="img/2021-09-04-15-38-14-746.jpg" alt="">
-                <div class="portfolio-layer">
-                    <h4>Webb Developer</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                    <i class="fa-solid fa-share-from-square"></i>
-                </div>
-            </div>
-            <div class="portfolio-box">
-                <img src="img/2021-09-04-15-38-14-746.jpg" alt="">
-                <div class="portfolio-layer">
-                    <h4>Webb Developer</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                    <i class="fa-solid fa-share-from-square"></i>
-                </div>
-            </div>
-            <div class="portfolio-box">
-                <img src="img/2021-09-04-15-38-14-746.jpg" alt="">
-                <div class="portfolio-layer">
-                    <h4>Webb Developer</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                    <i class="fa-solid fa-share-from-square"></i>
-                </div>
-            </div>
-            <div class="portfolio-box">
-                <img src="img/2021-09-04-15-38-14-746.jpg" alt="">
-                <div class="portfolio-layer">
-                    <h4>Webb Developer</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                    <i class="fa-solid fa-share-from-square"></i>
-                </div>
-            </div>
-        
+        <div class="filter-container">
+            <button class="filter-btn" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="web-design">Web Design</button>
+            <button class="filter-btn" data-filter="wordpress">WordPress</button>
+            <button class="filter-btn" data-filter="javascript">JavaScript Apps</button>
         </div>
-     </section> -->
+        <div class="portfolio-container">
+            <!-- Web Design Projects -->
+            <div class="portfolio-box"
+                 data-category="web-design"
+                 data-title="Corporate Website Design"
+                 data-details="A professional website for a corporate business."
+                 data-info="This project involves creating a corporate website with a modern, responsive design using Django. The focus was on clean UI and optimized performance for company profiles and blogs."
+                 data-framework="Django"
+                 data-language="Python, HTML, CSS"
+                 data-other="SEO Optimization, Responsive Design">
+                <img src="img/2021-09-04-15-38-14-746.jpg" alt="Corporate Website Design">
+                <div class="portfolio-layer">
+                    <h4>Corporate Website</h4>
+                    <p>Click for more details</p>
+                </div>
+            </div>
+            <div class="portfolio-box" 
+                 data-category="web-design"
+                 data-title="Portfolio Website"
+                 data-details="A portfolio website for showcasing personal projects."
+                 data-info="A minimalist and visually appealing portfolio website for designers and developers. Built using Django and Bootstrap with a focus on showcasing project galleries and testimonials."
+                 data-framework="Django, Bootstrap"
+                 data-language="Python, HTML, CSS"
+                 data-other="Interactive Gallery, Blog Integration">
+                <img src="img/2021-09-04-15-38-14-746.jpg" alt="Portfolio Website">
+                <div class="portfolio-layer">
+                    <h4>Portfolio Website</h4>
+                    <p>Click for more details</p>
+                </div>
+            </div>
+    
+            <!-- WordPress Projects -->
+            <div class="portfolio-box"
+                 data-category="wordpress"
+                 data-title="E-Commerce Website"
+                 data-details="An e-commerce solution built with WordPress."
+                 data-info="This project features an online store for a clothing brand. Developed using WooCommerce with custom themes and payment gateway integrations to provide a seamless shopping experience."
+                 data-framework="WordPress, WooCommerce"
+                 data-language="PHP, CSS"
+                 data-other="Payment Integration, Inventory Management">
+                <img src="img/2021-09-04-15-38-14-746.jpg" alt="E-Commerce Website">
+                <div class="portfolio-layer">
+                    <h4>E-Commerce Website</h4>
+                    <p>Click for more details</p>
+                </div>
+            </div>
+            <div class="portfolio-box"
+                 data-category="wordpress"
+                 data-title="Blogging Platform"
+                 data-details="A custom WordPress theme for a blogging platform."
+                 data-info="A blogging platform for food and travel bloggers with personalized themes. Features include advanced search functionality and interactive comment sections."
+                 data-framework="WordPress"
+                 data-language="PHP, CSS, JavaScript"
+                 data-other="Custom Theme Development, Analytics Integration">
+                <img src="img/2021-09-04-15-38-14-746.jpg" alt="Blogging Platform">
+                <div class="portfolio-layer">
+                    <h4>Blogging Platform</h4>
+                    <p>Click for more details</p>
+                </div>
+            </div>
+    
+            <!-- JavaScript Apps -->
+            <div class="portfolio-box"
+                 data-category="javascript"
+                 data-title="Patient Examination Results System"
+                 data-details="A system to manage and display patient examination results."
+                 data-info="Developed a web application for hospitals to manage patient examination results. Features include dynamic forms, AJAX-powered result submissions, and interactive dashboards for doctors."
+                 data-framework="PHP, AJAX"
+                 data-language="HTML, CSS, JavaScript"
+                 data-other="Dynamic Forms, API Integration">
+                <img src="img/2021-09-04-15-38-14-746.jpg" alt="Patient Examination Results">
+                <div class="portfolio-layer">
+                    <h4>Patient Examination System</h4>
+                    <p>Click for more details</p>
+                </div>
+            </div>
+            <div class="portfolio-box"
+                 data-category="javascript"
+                 data-title="Task Management App"
+                 data-details="A task management tool for teams."
+                 data-info="Built a task management app for team collaboration using React. Includes features like real-time updates, drag-and-drop functionality, and notifications."
+                 data-framework="React, Node.js"
+                 data-language="JavaScript, HTML, CSS"
+                 data-other="Real-Time Updates, Drag-and-Drop">
+                <img src="img/2021-09-04-15-38-14-746.jpg" alt="Task Management App">
+                <div class="portfolio-layer">
+                    <h4>Task Management App</h4>
+                    <p>Click for more details</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Modal -->
+    <div class="modal" id="projectModal">
+        <div class="modal-content">
+            <span class="close">&times;</span> <!-- Close button -->
+            <h3 id="modalTitle">Project Title</h3>
+            <p id="modalDetails">Details about the project will appear here.</p>
+            <p id="modalInfo" style="margin-top: 1rem; font-style: italic;">Description will appear here.</p>
+            <ul>
+                <li>Framework: <span id="modalFramework"></span></li>
+                <li>Language: <span id="modalLanguage"></span></li>
+                <li>Other: <span id="modalOther"></span></li>
+            </ul>
+        </div>
+    </div>
+    
     <!-- CONTACT SECTION DESIGN  -->
     <section class="contact" id="contact">
         <h2 class="heading">Contact<span> Me</span></h2>
@@ -97,129 +177,6 @@
         </form>
     </section>
 
-
-    <!-- other portfolio  -->
-    <!-- <section class="portfolio" id="portfolio">
-        <h2 class="heading">Latest <span>Projects</span></h2>
-        <div class="filter-container">
-            <button class="filter-btn" data-filter="all">All</button>
-            <button class="filter-btn" data-filter="web-design">Web Design</button>
-            <button class="filter-btn" data-filter="wordpress">WordPress</button>
-            <button class="filter-btn" data-filter="javascript">JavaScript Apps</button>
-        </div>
-        <div class="portfolio-container">
-            <div class="portfolio-box" data-category="web-design">
-                <img src="img/2021-09-04-15-38-14-746.jpg" alt="Web Design Project">
-                <div class="portfolio-layer">
-                    <h4>Web Design</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                </div>
-            </div>
-            <div class="portfolio-box" data-category="wordpress">
-                <img src="img/2021-09-04-15-38-14-746.jpg" alt="WordPress Project">
-                <div class="portfolio-layer">
-                    <h4>WordPress</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                </div>
-            </div>
-            <div class="portfolio-box" data-category="web-design">
-                <img src="img/2021-09-04-15-38-14-746.jpg" alt="Web Design Project">
-                <div class="portfolio-layer">
-                    <h4>Web Design</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                </div>
-            </div>
-            <div class="portfolio-box" data-category="javascript">
-                <img src="img/2021-09-04-15-38-14-746.jpg" alt="JavaScript App">
-                <div class="portfolio-layer">
-                    <h4>JavaScript App</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                </div>
-            </div>
-            <div class="portfolio-box" data-category="web-design">
-                <img src="img/2021-09-04-15-38-14-746.jpg" alt="Web Design Project">
-                <div class="portfolio-layer">
-                    <h4>Web Design</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                </div>
-            </div>
-            <div class="portfolio-box" data-category="wordpress">
-                <img src="img/2021-09-04-15-38-14-746.jpg" alt="WordPress Project">
-                <div class="portfolio-layer">
-                    <h4>WordPress</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                </div>
-            </div>
-            <div class="portfolio-box" data-category="web-design">
-                <img src="img/2021-09-04-15-38-14-746.jpg" alt="Web Design Project">
-                <div class="portfolio-layer">
-                    <h4>Web Design</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                </div>
-            </div>
-            <div class="portfolio-box" data-category="javascript">
-                <img src="img/2021-09-04-15-38-14-746.jpg" alt="JavaScript App">
-                <div class="portfolio-layer">
-                    <h4>JavaScript App</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                </div>
-            </div>
-            <div class="portfolio-box" data-category="wordpress">
-                <img src="img/2021-09-04-15-38-14-746.jpg" alt="WordPress Project">
-                <div class="portfolio-layer">
-                    <h4>WordPress</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                </div>
-            </div>
-        </div>
-    </section> -->
-    
-
-    <section class="portfolio" id="portfolio">
-        <h2 class="heading">Latest <span>Projects</span></h2>
-        <div class="portfolio-container">
-            <div class="portfolio-box" 
-                 data-title="Responsive Web Design" 
-                 data-details="A modern responsive web design project." 
-                 data-framework="Bootstrap 5" 
-                 data-language="HTML, CSS, JavaScript" 
-                 data-other="Responsive Design, SEO Optimization">
-                <img src="img/project1.jpg" alt="Web Design Project">
-                <div class="portfolio-layer">
-                    <h4>Web Design</h4>
-                    <p>Click for details</p>
-                </div>
-            </div>
-            <div class="portfolio-box" 
-                 data-title="WordPress E-Commerce" 
-                 data-details="A custom WordPress theme for e-commerce." 
-                 data-framework="WordPress" 
-                 data-language="PHP, CSS" 
-                 data-other="WooCommerce Integration">
-                <img src="img/project2.jpg" alt="WordPress Project">
-                <div class="portfolio-layer">
-                    <h4>WordPress</h4>
-                    <p>Click for details</p>
-                </div>
-            </div>
-            <div class="portfolio-box" 
-                 data-title="JavaScript Application" 
-                 data-details="A dynamic web application built with JavaScript." 
-                 data-framework="React" 
-                 data-language="JavaScript, TypeScript" 
-                 data-other="API Integration, State Management">
-                <img src="img/project3.jpg" alt="JavaScript App">
-                <div class="portfolio-layer">
-                    <h4>JavaScript App</h4>
-                    <p>Click for details</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-
-
-
     <!-- FOOTER SECTION DESIGN  -->
      <footer class="footer">
         <div class="footer-text">
@@ -232,5 +189,8 @@
 
     <!-- MAIN JS  -->
     <script src="JS/main.js"></script>
+
+    <!-- BOOTSTRAP JS  -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
 </body>
 </html>
