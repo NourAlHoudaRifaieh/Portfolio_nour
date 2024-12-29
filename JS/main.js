@@ -73,3 +73,58 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
+ // Responsive Menu Toggle
+ const menuIcon = document.querySelector('#menu-icon');
+ const navbar = document.querySelector('.navbar');
+
+ menuIcon.addEventListener('click', () => {
+     navbar.classList.toggle('active');
+ });
+
+// this code for the validation form of contact section 
+
+    const contactForm = document.getElementById('contactForm');
+
+    contactForm.addEventListener('submit', (e) => {
+        e.preventDefault(); // Prevent form submission to server for validation
+
+        const fullName = document.getElementById('fullName').value.trim();
+        const emailAddress = document.getElementById('emailAddress').value.trim();
+        const message = document.getElementById('message').value.trim();
+
+        // Simple validation rules
+        if (!fullName) {
+            alert('Full Name is required');
+            return;
+        }
+
+        if (!validateFullName(fullName)) {
+            alert('Full Name should only contain letters and spaces');
+            return;
+        }
+
+        if (!validateEmail(emailAddress)) {
+            alert('Please enter a valid email address');
+            return;
+        }
+
+        if (!message) {
+            alert('Message cannot be empty');
+            return;
+        }
+
+        alert('Form submitted successfully!'); // Replace this with actual form submission or processing logic
+    });
+
+    // Email validation function
+    function validateEmail(email) {
+        const emailPattern = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/;
+        return emailPattern.test(email);
+    }
+
+    // Full Name validation function (letters and spaces only)
+    function validateFullName(name) {
+        const namePattern = /^[a-zA-Z\\s]+$/;
+        return namePattern.test(name);
+    }
+
