@@ -82,49 +82,84 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
  });
 
 // this code for the validation form of contact section 
+const contactForm = document.getElementById('contactForm');
 
-    const contactForm = document.getElementById('contactForm');
+contactForm.addEventListener('submit', (e) => {
+    e.preventDefault(); // Prevent form submission to server for validation
 
-    contactForm.addEventListener('submit', (e) => {
-        e.preventDefault(); // Prevent form submission to server for validation
+    const fullName = document.getElementById('fullName').value.trim();
+    const emailAddress = document.getElementById('emailAddress').value.trim();
+    const message = document.getElementById('message').value.trim();
 
-        const fullName = document.getElementById('fullName').value.trim();
-        const emailAddress = document.getElementById('emailAddress').value.trim();
-        const message = document.getElementById('message').value.trim();
+    // Simple validation rules
+    if (!fullName) {
+        alert('Full Name is required');
+        return;
+    }
 
-        // Simple validation rules
-        if (!fullName) {
-            alert('Full Name is required');
-            return;
-        }
+    if (!validateFullName(fullName)) {
+        alert('Full Name should only contain letters and spaces');
+        return;
+    }
 
-        if (!validateFullName(fullName)) {
-            alert('Full Name should only contain letters and spaces');
-            return;
-        }
+    if (!validateEmail(emailAddress)) {
+        alert('Please enter a valid email address');
+        return;
+    }
 
-        if (!validateEmail(emailAddress)) {
-            alert('Please enter a valid email address');
-            return;
-        }
+    if (!message) {
+        alert('Message cannot be empty');
+        return;
+    }
 
-        if (!message) {
-            alert('Message cannot be empty');
-            return;
-        }
+    alert('Form submitted successfully!'); // Replace this with actual form submission or processing logic
+});
 
-        alert('Form submitted successfully!'); // Replace this with actual form submission or processing logic
+// Email validation function
+function validateEmail(email) {
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Correct pattern
+    return emailPattern.test(email);
+}
+
+// Full Name validation function (letters and spaces only)
+function validateFullName(name) {
+    const namePattern = /^[a-zA-Z\s]+$/;
+    return namePattern.test(name);
+}
+
+
+
+
+// this code for navbar to chnage the color when it will be active 
+// Select all nav links
+const navLinks = document.querySelectorAll('.navbar a');
+
+// Add click event listener to each link
+navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        // Remove 'active' class from all links
+        navLinks.forEach(nav => nav.classList.remove('active'));
+
+        // Add 'active' class to the clicked link
+        link.classList.add('active');
     });
+});
 
-    // Email validation function
-    function validateEmail(email) {
-        const emailPattern = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/;
-        return emailPattern.test(email);
-    }
+// this code for dark mood 
+const darkModeToggle = document.getElementById('darkModeToggle');
+const root = document.documentElement;
 
-    // Full Name validation function (letters and spaces only)
-    function validateFullName(name) {
-        const namePattern = /^[a-zA-Z\\s]+$/;
-        return namePattern.test(name);
-    }
+// Load saved preference from localStorage
+if (localStorage.getItem('theme') === 'dark') {
+    root.classList.add('dark-mode');
+    darkModeToggle.textContent = '☀️'; // Update icon for dark mode
+}
+
+// Toggle dark mode
+darkModeToggle.addEventListener('click', () => {
+    root.classList.toggle('dark-mode');
+    const theme = root.classList.contains('dark-mode') ? 'dark' : 'light';
+    darkModeToggle.textContent = theme === 'dark' ? '☀️' : '🌙'; // Update icon dynamically
+    localStorage.setItem('theme', theme); // Save preference
+});
 

@@ -13,16 +13,17 @@
 </head>
 <body>
     <!-- HEADER DESIGN  -->
-  
     <header class="header">
         <a href="#" class="logo" aria-label="Portfolio logo">Portfolio</a>
-        <button class="menu-icon" id="menu-icon" aria-label="Toggle navigation">
-            <i class="fa-solid fa-bars"></i>
-        </button>
-        <nav class="navbar">
+        <!-- <button class="menu-icon" id="menu-icon" aria-label="Toggle navigation"> -->
+            <i class="fa-solid fa-bars" id="menu-icon" aria-label="Toggle navigation"></i>
+        <!-- </button> -->
+        <nav role="navigation" aria-label="Primary Navigation" class="navbar">
             <a href="#home" class="active">Home</a>
             <a href="#portfolio">Portfolio</a>
             <a href="#contact">Contact</a>
+            <button id="darkModeToggle" aria-label="Toggle dark mode">🌙</button>
+           
         </nav>
     </header>
     
@@ -32,13 +33,15 @@
             <h3>Hi, Myself</h3>
             <h1>Nour Al Houda Rifaieh</h1>
             <h3>And I'm <span>Frontend Developer</span></h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim pariatur fuga dolorum asperiores quaerat molestias voluptatem facilis accusantium aspernatur voluptatibus, ex ipsum veniam sequi corporis. Nostrum repudiandae quaerat facilis iusto?</p>
+            <p>I am a fresh graduate from the Lebanese University, Faculty of Business Administration, specializing in Management Information Systems, and I am currently pursuing my Master’s degree (Master 1) in the same field. <br>
+                My experience includes web development using HTML, CSS, JavaScript, Bootstrap 5, and MySQL. I also have hands-on experience with WordPress and Django, which has enhanced my ability to create dynamic and user-friendly websites.<br>
+                My primary goal is to join a collaborative team where I can contribute to innovative technology projects in web development while continuing to grow academically and professionally.</p>
             <div class="social-media">
-                <a href="https://www.linkedin.com/in/nouralhoudarifaieh01/"><i class="fa-brands fa-linkedin-in"></i></a>
-                <a href="https://github.com/NourAlHoudaRifaieh"><i class="fa-brands fa-github"></i></a>
-                <a href="nouralhoudarifaieh@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+                <a aria-label="Linkedin" href="https://www.linkedin.com/in/nouralhoudarifaieh01/"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a aria-label="Github" href="https://github.com/NourAlHoudaRifaieh"><i class="fa-brands fa-github"></i></a>
+                <a aria-label="Send an email" href="mailto:nouralhoudarifaieh@gmail.com?subject=Hello&body=I%20would%20like%20to%20connect"><i class="fa-solid fa-envelope"></i></a>
             </div>
-            <a href="#" class="btn">Download CV</a>
+            <a href="assets/Nour Al Houda Rifaoeh CV 2024.pdf" download="NourAlHoudaRifaieh_CV" aria-label="Download Nour's CV as PDF" class="btn">Download CV</a>
         </div>
         <!-- <div class="home-img">
             <img src="img/2021-09-04-15-38-14-746.jpg" width="50" height="200" alt="">
@@ -94,7 +97,14 @@
                  data-framework="WordPress, WooCommerce"
                  data-language="PHP, CSS"
                  data-other="Payment Integration, Inventory Management">
-                <img src="img/2021-09-04-15-38-14-746.jpg" alt="E-Commerce Website">
+                <!-- <picture> -->
+                    <!-- <source srcset="img/2021-09-04-15-38-14-746.webp" type="image/webp"> -->
+                    <img src="img/2021-09-04-15-38-14-746.jpg" alt="Description of the image" loading="lazy" class="lazyload">
+                <!-- </picture> -->
+                  
+                <!-- i use the website squoosh to transferv the image from jpg to webp -->
+                
+                <!-- <img src="img/2021-09-04-15-38-14-746.jpg" alt="E-Commerce Website"> -->
                 <div class="portfolio-layer">
                     <h4>E-Commerce Website</h4>
                     <p>Click for more details</p>
@@ -148,7 +158,7 @@
     </section>
     
     <!-- Modal -->
-    <div class="modal" id="projectModal">
+    <div role="dialog" class="modal" id="projectModal">
         <div class="modal-content">
             <span class="close">&times;</span> <!-- Close button -->
             <h3 id="modalTitle">Project Title</h3>
@@ -162,15 +172,16 @@
         </div>
     </div>
     
+
     <!-- CONTACT SECTION DESIGN  -->
     <section class="contact" id="contact">
         <h2 class="heading">Contact<span> Me</span></h2>
-        <form id="contactForm">
+        <form id="contactForm" role="form" aria-labelledby="contact-title" aria-describedby="contact-desc">        
             <div class="input-box">
-                <input type="text" id="fullName" placeholder="Full Name" required>
-                <input type="email" id="emailAddress" placeholder="Email Address" required>
+                <input type="text" id="fullName" placeholder="Full Name"  aria-required="true" required>
+                <input type="email" id="emailAddress" placeholder="Email Address" aria-required="true" required>
             </div>
-            <textarea id="message" cols="30" rows="10" placeholder="Your Message" required></textarea>
+            <textarea id="message" cols="30" rows="10" placeholder="Your Message"  aria-required="true" required></textarea>
             <input type="submit" value="Send Message" class="btn">
         </form>
     </section>
@@ -190,5 +201,8 @@
 
     <!-- BOOTSTRAP JS  -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
+     <!-- lazysizes  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js" async></script>
+
 </body>
 </html>
