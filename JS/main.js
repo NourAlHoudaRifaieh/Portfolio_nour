@@ -1,3 +1,4 @@
+// this code for the  filter filterable portfolio section 
 document.addEventListener("DOMContentLoaded", () => {
     const filterButtons = document.querySelectorAll(".filter-btn");
     const portfolioBoxes = document.querySelectorAll(".portfolio-box");
@@ -17,11 +18,8 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 });
-
-
 // This code for the popup modal for the portfolio section when i click on any project it will open the popup 
 // and show the details of this project 
-
 document.addEventListener("DOMContentLoaded", () => {
     const portfolioBoxes = document.querySelectorAll(".portfolio-box");
     const modal = document.getElementById("projectModal");
@@ -32,7 +30,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const modalLanguage = document.getElementById("modalLanguage");
     const modalOther = document.getElementById("modalOther");
     const closeModal = document.querySelector(".modal .close");
-
     // Show modal with content
     portfolioBoxes.forEach(box => {
         box.addEventListener("click", () => {
@@ -42,7 +39,6 @@ document.addEventListener("DOMContentLoaded", () => {
             const framework = box.getAttribute("data-framework");
             const language = box.getAttribute("data-language");
             const other = box.getAttribute("data-other");
-
             // Populate modal content
             modalTitle.textContent = title;
             modalDetails.textContent = details;
@@ -50,17 +46,14 @@ document.addEventListener("DOMContentLoaded", () => {
             modalFramework.textContent = framework;
             modalLanguage.textContent = language;
             modalOther.textContent = other;
-
             // Show modal
             modal.style.display = "flex";
         });
     });
-
     // Close modal
     closeModal.addEventListener("click", () => {
         modal.style.display = "none";
     });
-
     // Close modal when clicking outside the content
     window.addEventListener("click", (e) => {
         if (e.target === modal) {
@@ -68,5 +61,15 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 });
-
+// This code for  Create a smooth scroll effect for internal links.
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener("click", function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute("href"));
+        target.scrollIntoView({
+            behavior: "smooth", // Smooth scrolling
+            block: "start"      // Align to the top of the section
+        });
+    });
+});
 

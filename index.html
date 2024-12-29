@@ -13,17 +13,19 @@
 </head>
 <body>
     <!-- HEADER DESIGN  -->
+  
     <header class="header">
-        <a href="#" class="logo">Portfolio</a>
-        <i class="fa-solid fa-bars" id="menu-icon"></i>
-
+        <a href="#" class="logo" aria-label="Portfolio logo">Portfolio</a>
+        <button class="menu-icon" id="menu-icon" aria-label="Toggle navigation">
+            <i class="fa-solid fa-bars"></i>
+        </button>
         <nav class="navbar">
             <a href="#home" class="active">Home</a>
             <a href="#portfolio">Portfolio</a>
             <a href="#contact">Contact</a>
         </nav>
     </header>
-
+    
     <!-- HOME SECTION DESIGN  -->
     <section class="home" id="home">
         <div class="home-content">
@@ -38,9 +40,9 @@
             </div>
             <a href="#" class="btn">Download CV</a>
         </div>
-        <div class="home-img">
+        <!-- <div class="home-img">
             <img src="img/2021-09-04-15-38-14-746.jpg" width="50" height="200" alt="">
-        </div>
+        </div> -->
     </section>
     
     <!-- PORTFOLIO SECTION DESIGN  -->
@@ -167,10 +169,6 @@
             <div class="input-box">
                 <input type="text" placeholder="Full Name">
                 <input type="email" placeholder="Email Address">
-            </div>
-            <div class="input-box">
-                <input type="number" placeholder="Mobile Number">
-                <input type="text" placeholder="Subject">
             </div>
             <textarea name="" id="" cols="30" rows="10" placeholder="Your Message"></textarea>
             <input type="submit" value="Send Message" class="btn">
