@@ -441,11 +441,11 @@ img.lazyloaded {
         font-size: 2.5rem;
     }
     .portfolio-layer h4 {
-        font-size: 1.4rem;
+        font-size: 2rem;
     }
 
     .portfolio-layer p {
-        font-size: 1.1rem;
+        font-size: 2rem;
     }
     .portfolio-container {
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
