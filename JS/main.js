@@ -2,24 +2,22 @@
 document.addEventListener("DOMContentLoaded", () => {
     const filterButtons = document.querySelectorAll(".filter-btn");
     const portfolioBoxes = document.querySelectorAll(".portfolio-box");
-
     filterButtons.forEach(button => {
         button.addEventListener("click", () => {
             const filter = button.getAttribute("data-filter");
-
             // Filter portfolio items
             portfolioBoxes.forEach(box => {
                 if (filter === "all" || box.getAttribute("data-category") === filter) {
-                    box.style.display = "block"; // Show matching items
+                    box.style.display = "block"; 
                 } else {
-                    box.style.display = "none"; // Hide non-matching items
+                    box.style.display = "none"; 
                 }
             });
         });
     });
 });
-// This code for the popup modal for the portfolio section when i click on any project it will open the popup 
-// and show the details of this project 
+/************This code for the popup modal for the portfolio section when i click on any project it 
+* will open the popup and show the details of this project**************************************/
 document.addEventListener("DOMContentLoaded", () => {
     const portfolioBoxes = document.querySelectorAll(".portfolio-box");
     const modal = document.getElementById("projectModal");
@@ -61,7 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 });
-// This code for  Create a smooth scroll effect for internal links.
+/***************This code for  Create a smooth scroll effect for internal links*******************/
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener("click", function (e) {
         e.preventDefault();
@@ -72,89 +70,65 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         });
     });
 });
-
- // Responsive Menu Toggle
- const menuIcon = document.querySelector('#menu-icon');
- const navbar = document.querySelector('.navbar');
-
- menuIcon.addEventListener('click', () => {
+/**************Responsive Menu Toggle*******************/
+const menuIcon = document.querySelector('#menu-icon');
+const navbar = document.querySelector('.navbar');
+menuIcon.addEventListener('click', () => {
      navbar.classList.toggle('active');
- });
-
-// this code for the validation form of contact section 
+});
+/************this code for the validation form of contact section ******************/
 const contactForm = document.getElementById('contactForm');
-
 contactForm.addEventListener('submit', (e) => {
     e.preventDefault(); // Prevent form submission to server for validation
-
     const fullName = document.getElementById('fullName').value.trim();
     const emailAddress = document.getElementById('emailAddress').value.trim();
     const message = document.getElementById('message').value.trim();
-
-    // Simple validation rules
     if (!fullName) {
         alert('Full Name is required');
         return;
     }
-
     if (!validateFullName(fullName)) {
         alert('Full Name should only contain letters and spaces');
         return;
     }
-
     if (!validateEmail(emailAddress)) {
         alert('Please enter a valid email address');
         return;
     }
-
     if (!message) {
         alert('Message cannot be empty');
         return;
     }
-
-    alert('Form submitted successfully!'); // Replace this with actual form submission or processing logic
+    alert('Form submitted successfully!'); 
 });
-
-// Email validation function
+//Email validation function
 function validateEmail(email) {
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Correct pattern
     return emailPattern.test(email);
 }
-
 // Full Name validation function (letters and spaces only)
 function validateFullName(name) {
     const namePattern = /^[a-zA-Z\s]+$/;
     return namePattern.test(name);
 }
-
-
-
-
-// this code for navbar to chnage the color when it will be active 
-// Select all nav links
+/********this code for navbar to chnage the color when it will be active************/ 
 const navLinks = document.querySelectorAll('.navbar a');
-
-// Add click event listener to each link
 navLinks.forEach(link => {
     link.addEventListener('click', () => {
         // Remove 'active' class from all links
         navLinks.forEach(nav => nav.classList.remove('active'));
-
         // Add 'active' class to the clicked link
         link.classList.add('active');
     });
 });
-
-// this code for dark mood 
+/**********this code for dark mood**************/ 
 const darkModeToggle = document.getElementById('darkModeToggle');
 const root = document.documentElement;
-
 // Load saved preference from localStorage
 if (localStorage.getItem('theme') === 'dark') {
     root.classList.add('dark-mode');
     darkModeToggle.textContent = '☀️'; // Update icon for dark mode
 }
-
 // Toggle dark mode
 darkModeToggle.addEventListener('click', () => {
     root.classList.toggle('dark-mode');
@@ -162,4 +136,11 @@ darkModeToggle.addEventListener('click', () => {
     darkModeToggle.textContent = theme === 'dark' ? '☀️' : '🌙'; // Update icon dynamically
     localStorage.setItem('theme', theme); // Save preference
 });
-
+/**************Remove the preloader after the site loads************/
+window.addEventListener('load', function () {
+    const preloader = document.getElementById('preloader');
+    preloader.style.opacity = '0'; // Fade-out effect
+    setTimeout(() => {
+        preloader.style.display = 'none'; // Hide completely
+    }, 500); // Adjust the timeout to match the fade-out duration
+});
